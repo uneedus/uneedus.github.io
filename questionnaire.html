@@ -72,10 +72,58 @@
             <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
             <p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
               <a href="https://unsplash.com/">Unsplash</a>!</p>
-            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">Submit</a>
+              <form>
+                <h5> Gender </h5>
+                <input type="radio" name="gender" value="male" > Male &ensp;
+                <input type="radio" name="gender" value="female" > Female
+                <br><br>
+
+                <h5> Symptom </h5>
+                <input type="radio" name="symptom" value="insomnia" id="insomnia" > Insomnia &ensp;
+                <input type="radio" name="symptom" value="sick" id="sick" > Sick &ensp;
+                <input type="radio" name="symptomr" value="cold" id="cold"> Catch a cold &ensp;
+                <br><br>
+
+
+                <h5> Select </h5>
+                <input type="checkbox" name="ab" value="male" id="" > Male &ensp;
+                <input type="checkbox" name="ab" value="male" id="" > Female &ensp;
+                <input type="checkbox" name="ab" value="male" id="" > Male &ensp;
+                <input type="checkbox" name="ab" value="male" id="" > Female &ensp;
+                <input type="checkbox" name="ab" value="male" id="" > Male &ensp;
+                <input type="checkbox" name="ab" value="male" id="" > Female &ensp;
+                <br><br>
+
+              </form>
+              <br>
+            <!-- <br/><a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">Submit</a> -->
+            <!-- <button type="button" onclick="myFunction()" width="200">Submit</button> -->
+            <button class="btn btn-dark btn-xl js-scroll-trigger" type="button" onclick="myFunction()" >Submit</button>
           </div>
         </div>
       </div>
+      <script>
+      function myFunction() {
+        var x, text;
+
+        // Get the value of the input field with id="numb"
+        x = document.getElementById("symptom").value;
+document.getElementById("ab").name
+        // If x is Not a Number or less than one or greater than 10
+        if (x == 'insomnia') {
+          text = "Recommend Vitamin A!";
+        }
+
+       else if (x == 'sick'){
+          text = "A";
+        }
+
+        else{
+           text = "B";
+         }
+        document.getElementById("demo").innerHTML = text;
+      }
+      </script>
 
     </section>
 
