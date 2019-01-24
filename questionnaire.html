@@ -90,11 +90,11 @@
 
                 <h5> Are you currently suffering from a disease? </h5>
 
-                <input type="checkbox" name="b" value="e" id="" > High blood pressure <br>
-                <input type="checkbox" name="b" value="e" id="" > Hyperlipidemia &ensp;<br>
-                <input type="checkbox" name="b" value="e" id="" > Diabetes &ensp;<br>
-                <input type="checkbox" name="b" value="e" id="" > Atopy &ensp;<br>
-                <input type="checkbox" name="b" value="e" id="" > Healthy &ensp;
+                <input type="checkbox" name="b" value="e" id="" > High blood pressure(고혈압) <br>
+                <input type="checkbox" name="b" value="e" id="" > Hyperlipidemia (고지혈증)&ensp;<br>
+                <input type="checkbox" name="b" value="e" id="" > Diabetes (당뇨)&ensp;<br>
+                <input type="checkbox" name="b" value="e" id="" > Atopy (아토피)&ensp;<br>
+                <input type="checkbox" name="b" value="e" id="" > Healthy (해당사항 없음)&ensp;
                 <br><br>
 
 
@@ -107,11 +107,13 @@
                 <br><br>
 
                 <h5>Please select the one that correspond to your usual lifestyle(Just One) </h5>
-                <input type="radio" name="symptom" value="look" id="insomnia" >&nbsp; I spend a lot of time looking at electronic displays.<br>
-                <input type="radio" name="symptom" value="sleep" id="sick" >&nbsp; There is always a lack of sleep. <br>
-                <input type="radio" name="symptom" value="insomnia" id="cold" >&nbsp; It's hard to fall asleep easily because of insomnia.<br>
-                <input type="radio" name="symptom" value="sun" id="cold" >&nbsp; I don't often see the sun.<br>
-                <input type="radio" name="symptom" value="none" id="cold" >&nbsp; None<br><br>
+                <div id="symptoms">
+                <input type="radio" name="symptom" value="1" id="look" >&nbsp; I spend a lot of time looking at electronic displays(전자기기를 자주 본다)<br>
+                <input type="radio" name="symptom" value="2" id="sleep" >&nbsp; There is always a lack of sleep(수면시간이 부족하다). <br>
+                <input type="radio" name="symptom" value="3" id="insomnia" >&nbsp; It's hard to fall asleep easily because of insomnia(불면증).<br>
+                <input type="radio" name="symptom" value="4" id="sun" >&nbsp; I don't often see the sun(햇빛을 보기 힘들다).<br>
+                <input type="radio" name="symptom" value="5" id="none" >&nbsp; None(해당사항 없음)<br><br>
+              </div>
 
                 <h5> Please select all your option. </h5>
                 <input type="checkbox" name="o" value="o" id="" >&nbsp; Smoking <br>
@@ -125,33 +127,60 @@
               <br>
             <!-- <br/><a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">Submit</a> -->
             <!-- <button type="button" onclick="myFunction()" width="200">Submit</button> -->
-            <button class="btn btn-dark btn-xl js-scroll-trigger" type="button" onclick="myFunction()" >Submit</button>
+
+            <button class="btn btn-dark btn-xl js-scroll-trigger" href="#result" type="button" onclick="myFunction()" >Submit</button>
+            <br><br><p id="demo"></p>
           </div>
         </div>
       </div>
+
       <script>
       function myFunction() {
-        var x, text;
+        var rate_value, text1, text2, text3, text4;
+      	var rates = document.getElementById('symptoms').value;
 
-        // Get the value of the input field with id="numb"
-        x = document.getElementById("symptom").value;
-document.getElementById("ab").name
-        // If x is Not a Number or less than one or greater than 10
-        if (x == 'insomnia') {
-          text = "Recommend Vitamin A!";
-        }
+      if (document.getElementById('insomnia').checked) {
+       	rate_value = document.getElementById('insomnia').value;
+      	text1 = "Our A";
+          document.getElementById("demo").innerHTML = text1;
+      }
 
-       else if (x == 'sick'){
-          text = "A";
-        }
+      else if (document.getElementById('look').checked) {
+        rate_value = document.getElementById('look').value;
+        text2 = "Vitamin B";
+          document.getElementById("demo").innerHTML = text2;
+      }
 
-        else{
-           text = "B";
-         }
-        document.getElementById("demo").innerHTML = text;
+      else if (document.getElementById('sun').checked) {
+        rate_value = document.getElementById('sun').value;
+        text3 = "Vitamin C";
+          document.getElementById("demo").innerHTML = text3;
+      }
+
+      else if (document.getElementById('sleep').checked) {
+        rate_value = document.getElementById('sleep').value;
+        text4 = "Vitamin D";
+          document.getElementById("demo").innerHTML = text4;
+      }
+      else {
+        text5 = "Vitamin E";
+          document.getElementById("demo").innerHTML = text5;
+      }
+
       }
       </script>
 
+    </section>
+
+    <section class="content-section bg-light" id="result">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h2>As I see it, every day you do one of two things : build health or produce disease in yourself.</h2>
+            <p class="lead mb-5"><i> - Adelle Davis(American author and nutritionist) - </i></p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
